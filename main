@@ -1,0 +1,46 @@
+import os
+import cv2
+path = 'fonderr-name'
+def create_train_data():
+	i = 1
+	for (dirpath,dirnames,filenames) in os.walk(path):
+		print(dirpath)
+		print(dirnames)
+		print(filenames)
+		for dirname in dirnames:
+			print(dirname)
+			label=dirname
+			for(direcpath,direcnames,files) in os.walk(path+"/"+dirname):
+				print(direcpath)
+				print(direcnames)
+				print(files)
+				for file in files:
+					actual_path=path+"/"+dirname+"/"+file
+					print(actual_path)
+					file = os.path.join(direcpath,file)
+					img = cv2.imread(file)
+					cv2.imwrite(path+"/"+dirname+"/"+dirname+str(i)+'.png',img)
+					i = i+1
+					#path1 =path+"/"+dirname+'/'+file
+			
+#create_train_data()
+def del_data():
+	i = 1
+	for (dirpath,dirnames,filenames) in os.walk(path):
+		print(dirpath)
+		print(dirnames)
+		print(filenames)
+		for dirname in dirnames:
+			print(dirname)
+			label=dirname
+			for(direcpath,direcnames,files) in os.walk(path+"/"+dirname):
+				print(direcpath)
+				print(direcnames)
+				print(files)
+				for file in files:
+					actual_path=path+"/"+dirname+"/"+file
+					print(actual_path)
+					if :
+						os.remove(file)
+					
+					#path1 =path+"/"+dirname+'/'+file
